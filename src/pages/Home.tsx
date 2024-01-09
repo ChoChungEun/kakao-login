@@ -12,7 +12,7 @@ const Home = () => {
   // };
   return (
     <div>
-      <p>Welcome!</p>
+      <p>Welcome!!</p>
       {/* <p>
         {isLoggedIn ? (
           <button onClick={handleClickGoProfile}>마이페이지</button>
