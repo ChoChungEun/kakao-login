@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/auth/kakao/callback" element={<Auth />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<Navigate to="/" replace={true} />} />
+        {/* <Route path="*" element={<Navigate to="/" replace={true} />} /> */}
       </Routes>
     </Router>
   );
