@@ -11,14 +11,12 @@
 # flow
 1. main page
 2. 카카오톡 로그인하기 버튼 클릭
-   - 해당 url 로 이동
-   - `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
+   - 카카오톡 자체 로그인 화면으로 이동 (`https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`)
 3. 카카오톡 자체 로그인 화면 등장
-   - 로그인 성공
-       - 성공시에 카카오 개발자 콘솔에서 등록한 `redirect url` 주소로 이동
-         - `auth/kakao/callback`
-         - 그러면 리액트에서는 해당 url에 접근할때 동작할 코드를 만들어주면 된다
-           - `로그인 시도 -> 성공 -> 토큰 저장 -> profile 화면으로 이동`
+   - 로그인 시도
+       - 로그인 성공하면 카카오 개발자 콘솔에서 등록한 redirect url 주소로 이동 `auth/kakao/callback` 
+         - 그러면 리액트에서는 해당 url에 라우터를 만들어 컴포넌트를 만들어주면 된다.
+           - 해당 컴포넌트 코드의 동작은 이렇다 `로그인 시도 -> 성공 -> 토큰 저장 -> profile 화면으로 이동`
               ```
                 const params = new URL(document.URL).searchParams;
                 const code = params.get("code");
