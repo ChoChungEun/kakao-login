@@ -1,9 +1,17 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { RecoilRoot } from "recoil";
+import Home from "./pages/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/kakao-login",
+    element: <Home />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <RecoilRoot>
-    <App />
+    <RouterProvider router={router} />
   </RecoilRoot>
 );
